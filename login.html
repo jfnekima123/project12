@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Black Origin — eLearning</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+  <meta name="description" content="RedNova— dynamic eLearning platform with bold visuals and smart courses"" />
+  <link rel="shortcut icon" href="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=64&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" type="image/x-icon" />
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Minimal icon fallback -->
+  <style>
+    [data-icon]{font-weight:700; display:inline-block; font-family:monospace; line-height:1;}
+  </style>
+
+  <!-- Theme CSS -->
+  <style>
+    :root{
+      --bg:#1a0000;           /* dark red base */
+      --panel:#330000;        /* panel/card background */
+      --muted:#f2f2f2;        /* light text for contrast */
+      --accent:#ff4d4d;       /* bright red for highlights/buttons */
+      --glass: rgba(235, 16, 16, 0.05);
+      --radius:12px;
+      --max-width:1180px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(180deg, #0e0d0dee, #1a0000 70%);
+      color: var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--accent);}
+    a:hover{color:#fff;}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 18px}
+
+    /* header */
+    .header-section{padding:12px 0;position:relative;z-index:20}
+    .header-top{padding:6px 0;font-size:13px;color:var(--muted)}
+    .header-main{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .header-logo img{height:48px;display:block}
+    .nav-menu{list-style:none;margin:0;padding:0;display:flex;gap:6px;align-items:center}
+    .nav-menu li{position:relative}
+    .nav-menu a{display:block;padding:10px 12px;border-radius:9px;color:var(--muted);font-weight:600}
+    .nav-menu a:hover{background:linear-gradient(90deg, rgba(240, 12, 12, 0.671), rgba(255,77,77,0.05));color:#fff}
+    .header-actions{display:flex;gap:10px;align-items:center}
+    .btn{padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+    .btn-primary{background: var(--accent); color: #fff; border:1px solid rgba(255,77,77,0.8);}
+    .btn-outline{background:transparent; border:1px solid rgba(255,255,255,0.2); color:var(--muted);}
+
+    /* mobile */
+    .header-toggle{display:none;cursor:pointer}
+    @media(max-width:991px){
+      .nav-menu{display:none}
+      .header-toggle{display:block}
+    }
+
+    /* page banner */
+    .page-banner{position:relative;padding:72px 0 36px;overflow:hidden; background: linear-gradient(180deg, #ff9999, #330000);}
+    .banner-inner{text-align:center;max-width:980px;margin:0 auto;padding:12px}
+    .breadcrumb{display:inline-flex;gap:8px;list-style:none;padding:0;margin:0 0 12px 0;color:var(--muted)}
+    .title{font-size:40px;color:#fff;margin:0;line-height:1.02}
+    .title span{color:var(--accent)}
+    .subtitle{color:var(--muted);margin-top:8px;font-size:15px}
+
+    /* shapes */
+    .shape{position:absolute;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.6));opacity:0.95}
+    .shape.s1{left:-60px;top:-40px;width:260px;animation:floatA 7s ease-in-out infinite}
+    .shape.s2{right:-80px;top:10px;width:320px;animation:floatB 6.5s ease-in-out infinite}
+    .shape.s3{left:6%;bottom:-60px;width:180px;animation:floatC 5.5s ease-in-out infinite}
+    @keyframes floatA{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
+    @keyframes floatB{0%{transform:translateY(0)}50%{transform:translateY(-28px)}100%{transform:translateY(0)}}
+    @keyframes floatC{0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)}}
+
+    /* register/login area */
+    .section{padding:20px 0}
+    .register-login-wrapper{display:flex;gap:28px;align-items:center;justify-content:space-between}
+    .card{background: linear-gradient(180deg, rgba(255,255,255,0.1), var(--panel)); padding:22px; border-radius:var(--radius); box-shadow:0 14px 40px rgba(0,0,0,0.65);}
+    .register-login-images img{width:100%;border-radius:12px;display:block}
+    .register-login-form .title{color:var(--accent);font-size:22px;margin:0 0 8px}
+    .form-wrapper input{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);margin-bottom:10px}
+    .form-wrapper .btn{width:100%;display:block}
+    .form-actions{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* cards grid for courses */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .course-card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(29, 26, 26, 0.144), rgba(255,255,255,0.02));transition:transform .25s ease,box-shadow .25s ease}
+    .course-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.55)}
+    .course-card img{width:100%;border-radius:8px;margin-bottom:12px}
+    .course-card h4{margin:6px 0 6px;color:#fff}
+    .course-card p{margin:0;color:var(--muted);font-size:13px}
+
+    /* download app */
+    .download-section{margin-top:26px;padding:22px 0}
+    .app-btn{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:12px}
+    .app-btn img{height:52px;border-radius:8px}
+
+    /* footer */
+    .footer-section{padding:38px 0 20px;margin-top:18px;border-top:1px solid rgba(255,255,255,0.03)}
+    .footer-grid{display:flex;gap:18px;flex-wrap:wrap}
+    .footer-col{flex:1;min-width:220px}
+    .footer-widget-title{color:var(--accent);font-weight:700;margin-bottom:8px}
+    .widget-link, .widget-info{padding:0;margin:0;list-style:none}
+    .widget-link li, .widget-info li{margin-bottom:8px;color:var(--muted)}
+    .copyright{display:flex;justify-content:space-between;align-items:center;margin-top:18px;border-top:1px solid rgba(255,255,255,0.03);padding-top:14px;color:var(--muted);font-size:13px}
+
+    /* back to top */
+    .back-to-top{position:fixed;right:18px;bottom:18px;background:var(--panel);padding:10px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,0.6)}
+
+    /* responsive tweaks */
+    @media(max-width:991px){
+      .register-login-wrapper{flex-direction:column}
+      .header-main{flex-direction:row;align-items:center}
+      .banner-inner{padding:6px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-wrapper">
+
+    <!-- Header -->
+    <header class="header-section">
+      <div class="header-top">
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+          <div class="muted">Exclusive perks for <a href="#" style="color:var(--accent)">learning champions</a></div>
+          <div style="display:flex;gap:18px;align-items:center">
+            <div class="muted"><span data-icon>☎</span> <a href="tel:01785520867">01785520867</a></div>
+            <div class="muted"><span data-icon>@</span> <a href="jfnekima12@gmail.com">jfnekima12@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="header-main">
+          <div class="header-logo"><a href="#"><img src="https://th.bing.com/th/id/OIP.0Lg49g2uKXJYPD1oiSaN8AHaHV?w=204&h=202&c=7&r=0&o=7&pid=1.7&rm=3" alt="Red Nova logo" /></a></div><div>
+            <div class="footer-widget-title">Red Nova</div>
+            <div class="muted">Chattogram, Bangladesh</div>
+          </div>
+        </div>
+
+          <nav>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Knowledge</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">HelpDesk</a></li>
+                
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <a class="btn btn-outline" href="login.html">Sign In</a>
+            <a class="btn btn-primary" href="register.html">Get Started</a>
+            <button class="header-toggle" aria-label="menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile slide-out (simple) -->
+    <div id="mobileMenu" style="display:none"></div>
+
+    <!-- Banner -->
+    <section class="page-banner">
+      <img class="shape s1" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="shape1">
+      <img class="shape s2" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="shape2">
+      <img class="shape s3" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="shape3">
+
+      <div class="container">
+        <div class="banner-inner">
+          <ul class="breadcrumb" aria-hidden="false">
+            <li><a href="#">Home</a></li>
+            <li style="color:var(--muted)">/ Login</li>
+          </ul>
+          <h1 class="title">Welcome to <span>Red Nova</span></h1>
+          <p class="subtitle">Modern learning. Real projects. Skills-dynamic eLearning platform with bold visuals and smart courses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content: Login + image -->
+    <main class="section">
+      <div class="container">
+        <div class="register-login-wrapper">
+          <div style="flex:1;min-width:300px">
+            <div class="card register-login-images">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="student learning" />
+            </div>
+          </div>
+
+          <div style="flex:1;min-width:320px">
+            <div class="card register-login-form">
+              <h3 class="title">Sign in <span>securely</span></h3>
+              <p class="muted">Use your account to continue to your courses, certificates and progress dashboard.</p>
+
+              <form class="form-wrapper" onsubmit="event.preventDefault(); alert('Demo only — implement real auth');">
+                <input type="email" name="email" placeholder="Email address" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+                  <label class="muted"><input type="checkbox" style="margin-right:8px">Remember me</label>
+                  <a class="muted" href="#">Forgot password?</a>
+                </div>
+                <div class="form-actions">
+                  <button class="btn btn-primary" type="submit">Login</button>
+                  <a class="btn btn-outline" href="#" onclick="alert('Demo Google login')">Login with Google</a>
+                  <p class="muted" style="text-align:center;margin:4px 0 0">New here? <a href="register.html">Create an account</a></p>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:200px;text-align:center">
+            <div style="font-size:28px;margin-bottom:6px;color:var(--accent)">⚡</div>
+            <h4 style="margin:0;color:#fff">Fast Learning</h4>
+            <p class="muted" style="margin-top:6px">Short, practical lessons you can finish tonight.</p>
+          </div>
+          <div class="card" style="flex:1;min-width:200px;text-align:center">
+            <div style="font-size:28px;margin-bottom:6px;color:var(--accent)">💼</div>
+            <h4 style="margin:0;color:#fff">Career Focused</h4>
+            <p class="muted" style="margin-top:6px">Portfolio projects, interview prep and certificates.</p>
+          </div>
+          <div class="card" style="flex:1;min-width:200px;text-align:center">
+            <div style="font-size:28px;margin-bottom:6px;color:var(--accent)">🌐</div>
+            <h4 style="margin:0;color:#fff">Community</h4>
+            <p class="muted" style="margin-top:6px">Study groups, mentor hours and active forums.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Popular courses grid -->
+    <section class="section">
+      <div class="container">
+        <h3 style="color:#fff;margin-bottom:12px">Popular Courses</h3>
+        <div class="grid">
+          <article class="course-card card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="web dev">
+            <h4>Web Development</h4>
+            <p class="muted">Build real-world apps with modern stacks — HTML, CSS, JS and backend APIs.</p>
+            <div style="margin-top:12px"><a class="btn btn-primary" href="#">Explore</a></div>
+          </article>
+
+          <article class="course-card card">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="python">
+            <h4>Python & ML</h4>
+            <p class="muted">From Python basics to Machine Learning models and deployment.</p>
+            <div style="margin-top:12px"><a class="btn btn-primary" href="#">Explore</a></div>
+          </article>
+
+          <article class="course-card card">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="network">
+            <h4>CCNA Networking</h4>
+            <p class="muted">Networking fundamentals and labs for Cisco certification prep.</p>
+            <div style="margin-top:12px"><a class="btn btn-primary" href="#">Explore</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- App download CTA -->
+    <section class="download-section">
+      <div class="container">
+        <div class="card" style="text-align:center">
+          <h4 style="color:var(--accent);margin:6px 0">Ready to learn on the go?</h4>
+          <h2 style="color:#fff;margin:6px 0">Download the Red Nova App</h2>
+          <p class="muted" style="max-width:720px;margin:8px auto">Study anytime, stay updated, and access mobile-first content.</p>
+          <div class="app-btn">
+            <a href="#" title="Google Play"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+            <a href="#" title="App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div style="display:flex;gap:10px;align-items:center">
+                <img src="https://th.bing.com/th/id/OIP.0Lg49g2uKXJYPD1oiSaN8AHaHV?w=204&h=202&c=7&r=0&o=7&pid=1.7&rm=3" 
+                alt="Red Nova Logo" 
+                style="height:44px;border-radius:8px" />
+           
+              <div>
+                <div class="footer-widget-title">Red Nova</div>
+                <div class="muted">Chattogram, Bangladesh</div>
+              </div>
+            </div>
+
+            <ul class="widget-info" style="margin-top:12px">
+              <li><span data-icon>@</span> <a href="jfnekima12@gmail.com">jfnekima12@gmail.com</a></li>
+              <li><span data-icon>☎</span> <a href="tel:01785520867">01785520867</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-widget-title">Categories</div>
+            <ul class="widget-link">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">MERN Stack</a></li>
+              <li><a href="#">CCNA</a></li>
+              <li><a href="#">Python</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-widget-title">Quick Links</div>
+            <ul class="widget-link">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Customer Support</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-widget-title">Subscribe</div>
+            <p class="muted">Get updates about courses, discounts and events via email.</p>
+            <form onsubmit="event.preventDefault(); alert('Subscribed (demo)')">
+              <input type="email" placeholder="Email here" required style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);margin-bottom:8px">
+              <button class="btn btn-primary" type="submit">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="copyright" style="margin-top:20px">
+          <div>
+            <a href="#" style="margin-right:10px;color:var(--muted)">Terms</a>
+            <a href="#" style="margin-right:10px;color:var(--muted)">Privacy</a>
+            <a href="#" style="color:var(--muted)">Sitemap</a>
+          </div>
+          <div>&copy; 2025 <span style="color:var(--accent)">Red Nova</span> — made with ♥ by Red Nova Team</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <a class="back-to-top" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" title="Back to top">↑</a>
+
+  </div>
+
+  <script>
+    (function(){
+      const toggle = document.querySelector('.header-toggle');
+      toggle && toggle.addEventListener('click', ()=>{
+        const nav = document.querySelector('.nav-menu');
+        if(nav) nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      });
+    })();
+  </script>
+
+</body>
+</html>
